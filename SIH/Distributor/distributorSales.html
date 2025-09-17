@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Page</title>
+  <link rel="icon" type="image" href="C:\Users\sarth\OneDrive\Attachments\Desktop\SIH\Logo_top.png">
+  <link rel="stylesheet" href="distributorSales.css">
+</head>
+<body>
+  <div class="navbar">
+        <div class="webisteName">
+            <span><h4>KrishiChain</h4></span>
+        </div>
+        <div class="nav-options">
+            <a href="distributorDashboard.html"><button type="button">🏠 Home</button></a>
+            <a href="distributorBuy.html"><button type="button">💵 Buy</button></a>
+            <a href="distributorSell.html"><button type="button">💰 Sell</button></a>
+            <button onclick="logoutUser()">Logout</button>
+        </div>
+    </div>
+    
+  <div class="main">
+    <h2>Sales Page</h2>
+    <div id="sales-list"></div>
+  </div>
+
+  <script>
+    const sales = JSON.parse(localStorage.getItem("salesProducts")) || [];
+    const listDiv = document.getElementById("sales-list");
+
+    if(sales.length === 0){
+      listDiv.innerHTML = "<p>No products added yet!</p>";
+    } else {
+      sales.forEach(product => {
+        let item = document.createElement("div");
+        item.className = "sale-card";
+        item.innerHTML = `
+          <h3>${product.name}</h3>
+          <p><b>Price:</b> ₹${product.price}/kg</p>
+          <p><b>Quantity:</b> ${product.quantity} kg</p>
+        `;
+        listDiv.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>

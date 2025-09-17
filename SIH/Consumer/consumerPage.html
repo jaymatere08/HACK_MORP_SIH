@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Consumer Dashboard</title>
+    <link rel="icon" type="image" href="C:\Users\sarth\OneDrive\Attachments\Desktop\SIH\Logo_top.png">
+    <link rel="stylesheet" href="consumerStyle.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+</head>
+<body>
+    
+    <div class="navbar">
+        <div class="webisteName">
+            <span><h4>KrishiChain</h4></span>
+        </div>
+        <div class="nav-options">
+            <a href="consumerPage.html"><button type="button">🏠 Home</button></a>
+            <a href="consumerMarket.html"><button type="button">🛒 Marketplace</button></a>
+            <a href="consumerQR.html"><button type="button">📱 QR Search</button></a>
+            <button onclick="logoutUser()">Logout</button>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="top-part">
+            <div class="welcome-section">
+                <img src="consumerbg.jpg" alt="Market">
+                <div class="overlay">
+                    <h1>Hey  <span id="pName"></span> 👋</h1>
+                    <p>Your trusted shopping hub</p>
+                </div>
+            </div>
+            
+            <div class="profile-page">
+                <div class="consumer-profile">
+                    <p>👤</p>
+                    <span><h3>Consumer Profile</h3></span>
+                </div>
+                <div class="profile-details">
+                    <p>Consumer ID: <span id="pID"></span></p>
+                    <p>Full Name: <span id="pName2"></span></p>
+                    <p>Location: <span id="pLocation"></span></p>
+                    <p>Member Since: <span id="pMember"></span></p>
+                    <p>Contact: <span id="pContact"></span></p>
+                    <p>Preference: <span id="pPreference"></span></p>
+                    <p>Total Orders: <span id="pOrders"></span></p>
+                    <p>Status: <span id="pStatus"></span></p>
+                </div>
+
+            </div>
+
+        </div>
+        
+
+            
+
+        
+
+
+    </div>
+
+    <script>
+        let user = JSON.parse(localStorage.getItem("userData"));
+            if(user){
+                document.getElementById("pName").innerText = user.name;
+                document.getElementById("pName2").innerText = user.name;
+                document.getElementById("pContact").innerText = user.contact;
+                document.getElementById("pLocation").innerText = user.location;
+                document.getElementById("pMember").innerText = user.memberSince;
+                document.getElementById("pStatus").innerText = user.status;
+                document.getElementById("pOrders").innerText = user.totalOrders;
+            } else {
+                window.location.href = "loginConsumer.html";
+            }
+    </script>
+    
+
+    <div class="bottomOptions">
+        <div class="delivery">
+            <div class="delivery-title">
+                <span><i class="fa-solid fa-house-user"> Delivery Details </i></span>
+            </div>
+            <div class="delivery-details">
+                <span>Primary Address:      NONE</span>
+                <span>Delivey Preference:     NONE</span>
+                <span>Payment Method:    NONE</span>
+            </div>
+        </div>  
+        
+        <div class="preferences">
+            <div class="prference-title">
+                <span><i class="fa-solid fa-star"></i>Preferences</span>
+            </div>
+            <div class="preference-details">
+                <span>Organic Only:   NONE</span>
+                <span>Local Farms:   NONE</span>
+                <span>Notifications:   NONE</span>
+            </div>
+
+        </div>
+    </div>
+    
+    <SCript>
+        function logoutUser() {
+        localStorage.removeItem("userData");   // sirf userData clear karega
+    
+        alert("You have been logged out!");
+        window.location.href = "loginConsumer.html"; // wapas login page bhej dega
+        }
+    </SCript>
+    
+
+</body>
+</html>

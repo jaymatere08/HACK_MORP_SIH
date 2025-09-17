@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR</title>
+    <link rel="icon" type="image" href="C:\Users\sarth\OneDrive\Attachments\Desktop\SIH\Logo_top.png">
+    <link rel="stylesheet" href="retailerQR.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="main">
+      <!-- <div class="NavBar">
+        <div class="LogowebsiteName">
+          <span class="webname flex flex-row w-auto items-center">
+            <span class="h=40 w-25 font-bold text-3xl">🍀</span>
+            <span
+              class="rounded-md h-auto text-xl text-green-600 text-3xl font-bold"
+              >Farm2Chain</span
+            >
+          </span>
+          <div
+            class="por mt-2 flex space-x-1 mx-2 mb-3 bg-white justify-between p-0 rounded-lg"
+          >
+            <button
+              class="flex-1 px-2 rounded-md text-sm transition-colors bg-white text-gray-900 shadow-lg"
+            >
+              👤Profile
+            </button>
+          </div>
+        </div>
+      </div> -->
+      <div class="navbar">
+        <div class="webisteName">
+          <h4 class="logo">KrishiChain</h4>
+        </div>
+        <div class="nav-options">
+          <a href="retailer.html"><button type="button">🏠 Home</button></a>
+          <a href="retailerCart.html"
+            ><button type="button">🛒 Inventory</button></a
+          >
+          <a href="retailermarket.html"
+            ><button type="button">🛒 Marketplace</button></a
+          >
+          <!-- <a href="retailerQRpage.html"><button type="button">📱 QR-Code</button></a> -->
+          <button onclick="logoutUser()">Logout</button>
+        </div>
+      </div>
+
+      <div class="QR-dash">
+        <div class="heading">
+          <p>
+            <b class="font-bold text-2xl">Product Verification with QR Code</b>
+          </p>
+          <p>
+            Scan or enter a QR code to verify product authenticity and trace its
+            journey
+          </p>
+        </div>
+
+        <div class="QR-scanner">
+          <p>QR Code</p>
+          <div class="scanner">
+            <input
+              type="text"
+              class="QR-Code"
+              placeholder="Enter QR Code(e.g, QR-WH-2022-001)"
+            />
+            <button class="scan-btn" onclick="openCamera()">📷 Scan</button>
+            <button type="button" class="Search">🔍 Search</button>
+          </div>
+          <video id="camera" autoplay style="display: none"></video>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openCamera() {
+        const video = document.getElementById("camera");
+        video.style.display = "block"; // Show camera preview
+
+        navigator.mediaDevices
+          .getUserMedia({ video: true })
+          .then((stream) => {
+            video.srcObject = stream;
+          })
+          .catch((error) => {
+            alert("Camera access denied: " + error);
+          });
+      }
+    </script>
+
+    <SCript>
+        function logoutUser() {
+        localStorage.removeItem("userData");   // sirf userData clear karega
+    
+        alert("You have been logged out!");
+        window.location.href = "retailerlogin.html"; // wapas login page bhej dega
+        }
+    </SCript>
+  </body>
+</html>

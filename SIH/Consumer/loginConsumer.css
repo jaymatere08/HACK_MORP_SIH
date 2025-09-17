@@ -1,0 +1,79 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.login-box {
+  width: 350px;
+  padding: 25px;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  animation: slideUp 1s ease;
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #6b21a8;
+  font-weight: 700;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-box label {
+  color: #6b21a8;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.login-box input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 0.7rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.login-box input:focus {
+  border-color: #8c3be3;
+  box-shadow: 0 0 5px rgba(140, 59, 227, 0.6);
+}
+
+.login-box button {
+  padding: 12px;
+  border: none;
+  border-radius: 0.7rem;
+  background: linear-gradient(135deg, #8c3be3, #ca9df9);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-box button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #6b21a8, #8c3be3);
+  box-shadow: 0 0 10px rgba(140, 59, 227, 0.7);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
