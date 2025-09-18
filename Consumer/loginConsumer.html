@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consumer Login</title>
+  <link rel="icon" type="image" href="C:\Users\sarth\OneDrive\Attachments\Desktop\SIH\Logo_top.png">
+  <link rel="stylesheet" href="loginConsumer.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="login-box">
+    <h2>Consumer Login</h2>
+    <form id="loginForm">
+      <label for="name"><i class="fa fa-user"></i> Enter Your Name: </label>
+      <input type="text" id="name" placeholder="Full Name" required>
+
+      <label for="contact"><i class="fa fa-phone"></i> Provide your contact no.: </label>
+      <input type="text" id="contact" placeholder="Contact" required>
+
+      <label for="location"><i class="fa fa-map-marker-alt"></i> Enter Your Location: </label>
+      <input type="text" id="location" placeholder="Location" required>
+
+      <label for="preference"><i class="fa fa-heart"></i> Enter Your Preference </label>
+      <input type="text" id="preference" placeholder="Preference (e.g: Organic Products)" required>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      let date = new Date();
+      let options = { month: 'short', year: 'numeric' };
+      let memberSince = date.toLocaleDateString('en-US', options);
+
+      let user = {
+        name: document.getElementById("name").value,
+        contact: document.getElementById("contact").value,
+        location: document.getElementById("location").value,
+        preference: document.getElementById("preference").value,
+        memberSince: memberSince,
+        status: "Verified ✅",
+        totalOrders: 0
+      };
+
+      localStorage.setItem("userData", JSON.stringify(user));
+      window.location.href = "consumerPage.html"; // redirect
+    });
+  </script>
+</body>
+</html>

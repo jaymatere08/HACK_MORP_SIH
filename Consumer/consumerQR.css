@@ -1,0 +1,134 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+
+.navbar{
+    height: 3rem;
+    border-radius: 1rem;
+    border: 1px solid rgb(231, 111, 231);
+    background-color: white;
+    margin: 1rem 1rem 0 1rem;
+    display: flex;
+    padding-left: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.nav-options{
+    display: flex;
+}
+
+.nav-options a{
+    text-decoration: none;
+    
+}
+
+.nav-options button{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: large;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    border: none;
+}
+
+.nav-options button {
+    transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+}
+
+.nav-options button:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 5px 15px rgba(140, 59, 227, 0.7);
+}
+
+
+.QR-dash{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.QR-scanner{
+  margin: 0 1rem 0 0;
+  padding-bottom: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.QR-scanner p{
+    margin-left: 1rem;
+    font-size: large;
+}
+.scanner input{
+    margin-left:1rem ;
+    padding-left: 1rem;
+    width: 75%;
+    height: 3rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+}
+.scanner{
+
+
+    width: 100%;
+    display: flex;
+}
+
+.scanner button{
+    cursor: pointer;
+    margin-right: 1rem;
+    border-radius: 2rem;
+    width: 20%;
+    font-size: large;
+}
+
+
+.scan-btn{
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.Search{
+    background-color: #9333ea;
+    color: #ffffff;
+}
+
+.scan-btn:hover{
+    background-color: #0c4bd3;
+}
+
+.Search:hover{
+    background-color: #7c16dc;
+}
+
+#camera {
+  display: block;            
+  margin: 20px auto;       
+  border-radius: 12px;       
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25); 
+  width: 80%;                 
+  max-width: 600px;           
+  height: auto;               
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
