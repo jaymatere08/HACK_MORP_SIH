@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Products</title>
+    <link rel="icon" type="image" href="C:\Users\sarth\OneDrive\Attachments\Desktop\SIH\Logo_top.png">
+    <link rel="stylesheet" href="distributorBuy.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="webisteName">
+            <span><h4>KrishiChain</h4></span>
+        </div>
+
+        <div class="nav-options">
+          <a href="C:\Users\sarth\OneDrive\Attachments\Desktop\SIH\index.html"><button type="button">🏠 Main Dashboard</button></a>
+            <a href="distributorDashboard.html"><button type="button">🏠 Home</button></a>
+            <a href="distributorSell.html"><button type="button">💰 Sell</button></a>
+            <a href="distrbutorLogistics.html"><button type="button">🚚 Logistics</button></a>
+            <button onclick="logoutUser()">Logout</button>
+        </div>
+    </div>
+
+    <div class="main">
+
+     
+       <div class="products">
+              <h2>Available Products</h2>
+              <p class="below-head">Fresh produce from verified farms near you</p>
+
+              <div class="product-list">
+              
+              
+              <div class="card">
+                <img src="orange.webp" alt="">
+                <span class="tag available">Available</span>
+                <h3>🍊 Oranges</h3>
+                <p class="info">Fresh from farm</p>
+                <p class="info"><b>Price:</b> ₹75/kg</p>
+                <p class="info"><b>Farm Address:</b>Nagpur</p>
+                <button class="btn" onclick="addToCart('🍊 Oranges', 75, 'Nagpur')">Add to Cart</button>
+              </div>
+
+              
+              <div class="card">
+                <img src="pineapple.webp" alt="">
+                <span class="tag available">Available</span>
+                <h3>🍍 Pineapples</h3>
+                <p class="info">Pesticide-free</p>
+                <p class="info"><b>Price:</b> ₹80/kg</p>
+                <p class="info"><b>Farm Address:</b>Satara</p>
+                <button class="btn" onclick="addToCart('🍍 Pineapples', 80, 'Satara')">Add to Cart</button>
+              </div>
+
+             
+              <div class="card">
+                <img src="strawberry.png" alt="">
+                <span class="tag limited">Limited</span>
+                <h3>🍓 Strawberry</h3>
+                <p class="info">Premium quality</p>
+                <p class="info"><b>Price:</b> ₹110/kg</p>
+                <p class="info"><b>Farm Address:</b> Mahabaleshwar</p>
+                <button class="btn" onclick="addToCart('🍓 Strawberry', 110, 'Mahabaleshwar')">Add to Cart</button>
+              </div>
+              
+              <div class="card">
+                <img src="watermelom.jpg" alt="">
+                <span class="tag available">Available</span>
+                <h3>🍉 Watermelon</h3>
+                <p class="info">Rich in nutrients</p>
+                <p class="info"><b>Price:</b> ₹50/kg</p>
+                <p class="info"><b>Farm Address:</b> Mulshi</p>
+                <button class="btn" onclick="addToCart('🍉 Watermelon', 50, 'Mulshi')">Add to Cart</button>
+              </div>
+              
+              <div class="card">
+                <img src="Pomo.jpg" alt="">
+                <span class="tag available">Available</span>
+                <h3>Pomegranate</h3>
+                <p class="info">Sweet & juicy</p>
+                <p class="info"><b>Price:</b> ₹60/kg</p>
+                <p class="info"><b>Farm Address:</b> Ratanagiri</p>
+                <button class="btn" onclick="addToCart('Pomegranate', 550, 'Ratanagiri')">Add to Cart</button>
+              </div>
+
+              <div class="card">
+                <img src="apple.webp" alt="">
+                  <span class="tag available">Available</span>
+                  <h3>🍎 Apples</h3>
+                  <p class="info">Freshly harvested</p>
+                  <p class="info"><b>Price:</b> ₹90/kg</p>
+                  <p class="info"><b>Farm Address:</b>Kashmir</p>
+                  <button class="btn" onclick="addToCart('🍎 Apples', 90, 'Kashmir')">Add to Cart</button>
+              </div>
+
+            </div>
+       </div>
+      
+  </div>
+
+    <script>
+        function addToCart(name, price, farm) {
+            const product = { name, price, farm };
+            localStorage.setItem('selectedProduct', JSON.stringify(product));
+            
+            window.location.href = 'distributorOrder.html';
+        }
+
+
+        function logoutUser() {
+            localStorage.removeItem("userData");
+            alert("You have been logged out!");
+            window.location.href = "file:///C:/Users/sarth/OneDrive/Attachments/Desktop/SIH/index.html  ";
+            localStorage.removeItem("salesProducts");
+        }
+    </script>
+
+
+
+</body>
+</html>

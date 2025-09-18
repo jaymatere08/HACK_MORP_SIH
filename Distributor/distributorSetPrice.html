@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set Product Price</title>
+  <link rel="icon" type="image" href="C:\Users\sarth\OneDrive\Attachments\Desktop\SIH\Logo_top.png">
+  <link rel="stylesheet" href="distributorSetPrice.css">
+</head>
+<body>
+  <div class="main">
+    <h2>Set Price</h2>
+    <div class="price-card">
+      <p><b>Product:</b> <span id="prodName"></span></p>
+
+      <label for="price">Price per kg:</label>
+      <input type="number" id="price" min="1" placeholder="Enter price" required>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" min="1" placeholder="Enter quantity" required>
+
+      <button onclick="savePrice()">Add to Sales Page</button>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const fruit = params.get("fruit");
+    document.getElementById("prodName").innerText = fruit;
+
+    function savePrice(){
+      const price = document.getElementById("price").value;
+      const quantity = document.getElementById("quantity").value;
+
+      if(!price || !quantity){
+        alert("Please enter both price and quantity!");
+        return;
+      }
+
+      const product = {
+        name: fruit,
+        price: price,
+        quantity: quantity
+      };
+
+      let sales = JSON.parse(localStorage.getItem("salesProducts")) || [];
+      sales.push(product);
+      localStorage.setItem("salesProducts", JSON.stringify(sales));
+
+      alert(`${fruit} added to Sales Page at ₹${price}/kg`);
+      window.location.href = "distributorSales.html";
+    }
+  </script>
+</body>
+</html>

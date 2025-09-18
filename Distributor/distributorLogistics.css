@@ -1,0 +1,164 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #2d8fa7 0%, #82d0e2 100%);  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.navbar{
+    height: 3rem;
+    border-radius: 1rem;
+    border: 1px solid rgb(111, 121, 231);
+    background-color: white;
+    margin: 1rem 1rem 0 1rem;
+    display: flex;
+    padding-left: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.nav-options{
+    display: flex;
+}
+
+.nav-options a{
+    text-decoration: none;
+    
+}
+
+.nav-options button{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: large;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    border: none;
+}
+
+.nav-options button {
+    transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+}
+
+.nav-options button:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 5px 15px rgba(62, 59, 227, 0.7);
+}
+
+
+
+.tracking-section {
+    color: #000;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 1300px;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: fadeInUp 1s ease forwards;
+    
+}
+
+.tracking-section h3 {
+    margin: 0;
+    color: #2c21a8;
+}
+
+.tracking-subtitle {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+
+.shipment-card {
+    border: 1px solid #eee;
+    border-radius: 0.8rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    background: #fff;
+    animation: slideInUp 0.8s ease forwards;
+    opacity: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shipment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+
+.shipment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.shipment-header h4 {
+    margin: 0;
+}
+
+
+.shipment-status {
+    font-size: 0.85rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+
+.shipment-status.in-transit {
+    background: #d4f8d4;
+    color: #137a13;
+    animation: pulse 1.5s infinite;
+}
+
+.shipment-status.loading {
+    background: #fff8d4;
+    color: #a87b13;
+    animation: pulse 1.5s infinite;
+}
+
+
+.retailer-info {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.6rem;
+}
+
+.retailer-info h5 {
+    margin: 0 0 0.8rem;
+}
+
+.retailer-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.blue-bg {
+    background: #f0f7ff;
+}
+
+.yellow-bg {
+    background: #fffde7;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInUp {
+    0% { opacity: 0; transform: translateY(40px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+.img01{
+  height:41px;
+  width:41px;
+  padding-top: 3px;
+}

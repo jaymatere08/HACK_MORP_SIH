@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributor Logistics</title>
+    <link rel="icon" type="image" href="C:\Users\sarth\OneDrive\Attachments\Desktop\SIH\Logo_top.png">
+    <link rel="stylesheet" href="distributorLogistics.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="webisteName">
+            <span><h4>KrishiChain</h4></span>
+        </div>
+
+        <div class="nav-options">
+            <a href="C:\Users\sarth\OneDrive\Attachments\Desktop\SIH\index.html"><button type="button">🏠 Main Dashboard</button></a>
+            <a href="distributorDashboard.html"><button type="button">🏠 Home</button></a>
+            <a href="distributorBuy.html"><button type="button">💵 Buy</button></a>
+            <a href="distributorSell.html"><button type="button">💰 Sell</button></a>
+            <button onclick="logoutUser()">Logout</button>
+        </div>
+    </div>
+
+
+    <div class="main">
+            <div class="tracking-section">
+                <h3>📡 Live Tracking</h3>
+                <p class="tracking-subtitle">Real-time status of all shipments</p>
+
+                
+                <div class="shipment-card">
+                    <div class="shipment-header">
+                        <h4>🚚 Shipment #1234</h4>
+                        <span class="shipment-status in-transit">In Transit</span>
+                    </div>
+                    <p><strong>Mumbai → Pune</strong> (Organic Vegetables)</p>
+
+                    <div class="retailer-info blue-bg">
+                        <h5>🛒 Retailer (Buyer) Information</h5>
+                        <div class="retailer-details">
+                            <div>
+                                <p>Store Name: <strong>Fresh Market Store</strong></p>
+                                <p>Contact: <strong>+91 98765 54321</strong></p>
+                            </div>
+                            <div>
+                                <p>Retailer ID: <strong>RC-9012-EFGH</strong></p>
+                                <p>Delivery Address: <strong>Shop 15, Market Complex, Pune</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="shipment-card">
+                    <div class="shipment-header">
+                        <h4>🚚 Shipment #1235</h4>
+                        <span class="shipment-status loading">Loading</span>
+                    </div>
+                    <p><strong>Nashik → Mumbai</strong> (Fresh Fruits)</p>
+
+                    <div class="retailer-info yellow-bg">
+                        <h5>🛒 Retailer (Buyer) Information</h5>
+                        <div class="retailer-details">
+                            <div>
+                                <p>Store Name: <strong>Metro Supermarket</strong></p>
+                                <p>Contact: <strong>+91 98765 11111</strong></p>
+                            </div>
+                            <div>
+                                <p>Retailer ID: <strong>RC-7890-MNOP</strong></p>
+                                <p>Delivery Address: <strong>Warehouse 3, Andheri East, Mumbai</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    
+    <SCript>
+        function logoutUser() {
+        localStorage.removeItem("userData"); 
+        localStorage.removeItem("salesProducts");
+    
+        alert("You have been logged out!");
+        window.location.href = "file:///C:/Users/sarth/OneDrive/Attachments/Desktop/SIH/index.html  ";
+        }
+    </SCript>
+
+</body>
+</html>
