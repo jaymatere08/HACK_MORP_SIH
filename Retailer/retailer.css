@@ -1,0 +1,197 @@
+body {
+  font-family: "Poppins", sans-serif;
+background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  height: 3rem;
+  border-radius: 1rem;
+  border: 1px solid #ffc2b1;
+  background-color: white;
+  margin: 1rem 1rem 0 1rem;
+  display: flex;
+  padding-left: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.nav-options {
+  display: flex;
+}
+
+.nav-options a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-options button {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: large;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  border: none;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+}
+
+.nav-options button:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 5px 15px #ffc2b1;
+  color: black;
+  background: #f8f8f8;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #000000;
+  margin: 0; 
+}
+
+
+.main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.top {
+  height: 300px;
+}
+
+.second {
+  background-image: url("https://imgs.search.brave.com/Zu0mu0CwvmDyt1Cz0pf-7vthu-E5QskmFucAZPU0uGg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9mcnVp/dC12ZW5kb3ItbG9j/YWwtbWFya2V0LWNv/bG9yZnVsLWRpc3Bs/YXktZnJlc2gtZnJ1/aXRzLXZpYnJhbnQt/aW52aXRpbmctYnVz/dGxpbmctbWFya2V0/cGxhY2UtY29weS1z/cGFjZS10ZXh0LTMy/NjUyMzY3My5qcGc ");
+  background-repeat: no-repeat;
+  width: 750px;
+  height: 300px;
+  background-size: 921.6px auto;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+.second p:first-child {
+  animation: fadeInText 1.5s ease forwards;
+  opacity: 0;
+}
+
+.third {
+  width: 280px;
+  height: 300px;
+  animation: slideInLeft 1s ease forwards;
+  opacity: 0;
+}
+
+.four {
+  height: 300px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUpCards 0.8s ease forwards;
+}
+
+.row2 button {
+  display: flex;
+  justify-content: center;
+}
+
+.five {
+  height: 260px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUpCards 0.8s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.scanQr button {
+  display: flex;
+  justify-content: center;
+}
+
+.recentbuys {
+  width: 1046px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUpCards 0.8s ease forwards;
+}
+
+.totalbuys {
+  background-color: #f4eeff;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUpCards 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.verified {
+  animation: pulse 2s infinite;
+}
+
+.cart {
+  position: sticky;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUpCards {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px #9be7ff;
+  }
+  50% {
+    box-shadow: 0 0 15px #3d94a8;
+  }
+  100% {
+    box-shadow: 0 0 5px #9be7ff;
+  }
+}
