@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Card</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="productCard.css">
+</head>
+<body>
+    <div class="navbar">
+    <div class="webisteName">
+      <h4 class="logo">KrishiChain</h4>
+    </div>
+    <div class="nav-options">
+      <a href="farmer_chatbot.html"><button type="button">🏠Home</button></a>
+      <a href="farmersell.html"><button type="button">➕ Sell Products</button></a>
+      <button onclick="logoutUser()">Logout</button>
+    </div>
+  </div>
+
+  <div id="productCard"></div>
+
+  <script>
+    const productData = JSON.parse(localStorage.getItem("productData"));
+
+    if (productData) {
+      document.getElementById("productCard").innerHTML = `
+        <div class="card">
+          <img src="${productData.image}" alt="Product Image">
+          <h3>🍋 ${productData.name}</h3>
+          <p><b>Price:</b> ₹${productData.price}/kg</p>
+          <p><b>Farm:</b> ${productData.description}</p>
+          <p><b>Address:</b> ${productData.location}</p>
+          <div class="success">Uploaded Successfully ✅</div>
+        </div>
+      `;
+    } else {
+      document.getElementById("productCard").innerHTML = `<p>No product data found</p>`;
+    }
+  </script>
+
+</body>
+</html>

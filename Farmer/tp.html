@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farm2Chain - Consumer</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="consumerStyle.css" />
+</head>
+<body>
+  <div class="navbar">
+    <div class="webisteName">
+      <span><h4>🍀 Farm2Chain</h4></span>
+    </div>
+    <div class="nav-options">
+      <a href="consumerPage.html"><button type="button">🏠 Home</button></a>
+      <a href="consumerMarket.html"><button type="button">🛒 Marketplace</button></a>
+      <a href="consumerQR.html"><button type="button">📱 QR Search</button></a>
+      <button onclick="logoutUser()">Logout</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="top-part">
+      <div class="welcome-section">
+        <img src="consumerbg.jpg" alt="Market" />
+        <div class="overlay">
+          <h1>Hey <span id="pName"></span> 👋</h1>
+          <p>Your trusted shopping hub</p>
+        </div>
+      </div>
+
+      <div class="profile-page">
+        <div class="consumer-profile">
+          <p>👤</p>
+          <span><h3>Consumer Profile</h3></span>
+        </div>
+        <div class="profile-details">
+          <p>Consumer ID: <span id="pID"></span></p>
+          <p>Full Name: <span id="pName2"></span></p>
+          <p>Location: <span id="pLocation"></span></p>
+          <p>Member Since: <span id="pMember"></span></p>
+          <p>Contact: <span id="pContact"></span></p>
+          <p>Preference: <span id="pPreference"></span></p>
+          <p>Total Orders: <span id="pOrders"></span></p>
+          <p>Status: <span id="pStatus"></span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Graphs Section -->
+    <div class="container my-5">
+      <div class="row g-4">
+        <!-- Total Sales Graph -->
+        <div class="col-md-6">
+          <div class="card shadow">
+            <div class="card-header bg-success text-white">
+              📈 Total Sales (Past Year)
+            </div>
+            <div class="card-body">
+              <canvas id="totalSalesChart" height="150"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Crop-wise Sales Graph -->
+        <div class="col-md-6">
+          <div class="card shadow">
+            <div class="card-header bg-success text-white">
+              🌱 Crop-wise Sales
+            </div>
+            <div class="card-body">
+              <canvas id="cropSalesChart" height="150"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Load profile from local storage
+    let user = JSON.parse(localStorage.getItem("userData"));
+    if (user) {
+      document.getElementById("pName").innerText = user.name;
+      document.getElementById("pName2").innerText = user.name;
+      document.getElementById("pContact").innerText = user.contact;
+      document.getElementById("pLocation").innerText = user.location;
+      document.getElementById("pMember").innerText = user.memberSince;
+      document.getElementById("pStatus").innerText = user.status;
+      document.getElementById("pOrders").innerText = user.totalOrders;
+    } else {
+      window.location.href = "loginConsumer.html";
+    }
+
+    function logoutUser() {
+      localStorage.removeItem("userData");
+      alert("You have been logged out!");
+      window.location.href = "loginConsumer.html";
+    }
+
+    // Empty charts (ready for dynamic data)
+    const totalSalesCtx = document.getElementById("totalSalesChart").getContext("2d");
+    new Chart(totalSalesCtx, {
+      type: "line",
+      data: {
+        labels: [], // Months will go here
+        datasets: [
+          {
+            label: "Total Sales (₹)",
+            data: [], // Sales values will go here
+            borderColor: "green",
+            backgroundColor: "rgba(0,128,0,0.2)",
+            fill: true,
+            tension: 0.3
+          }
+        ]
+      },
+      options: { responsive: true }
+    });
+
+    const cropSalesCtx = document.getElementById("cropSalesChart").getContext("2d");
+    new Chart(cropSalesCtx, {
+      type: "bar",
+      data: {
+        labels: [], // Crop names go here
+        datasets: [
+          {
+            label: "Sales (₹)",
+            data: [], // Sales by crop
+            backgroundColor: ["#4CAF50", "#FF9800", "#2196F3", "#9C27B0"]
+          }
+        ]
+      },
+      options: { responsive: true }
+    });
+  </script>
+</body>
+</html>
